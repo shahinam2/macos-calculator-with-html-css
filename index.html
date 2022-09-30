@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #2B2D2F;
+
+            position: relative;
+
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            border-top: 1px solid gray;
+
+            display: grid;
+            gap: 2px;
+            border-radius: 10px;
+
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 40px, 80px, repeat(5, 76px);
+
+            grid-template-areas:
+                "win-ctrl    win-ctrl   win-ctrl    win-ctrl"
+                "res         res        res         res "
+                "ac          plus-min   perc        div "
+                "seven       eight      nine        mul "
+                "four        five       six         minus"
+                "one         tow        three       plus"
+                "zero        zero       dot         eq  ";
+        }
+
+        .win-ctrl {
+            grid-area: win-ctrl;
+        }
+
+        .close,
+        .minimize,
+        .maximize {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .win-ctrl .close {
+            background-color: #FB5856;
+            top: 10px;
+            left: 10px;
+        }
+
+        .win-ctrl .maximize {
+            background-color: #E5C03F;
+            top: 10px;
+            left: 40px;
+        }
+
+        .win-ctrl .minimize {
+            background-color: #58C13D;
+            top: 10px;
+            left: 70px;
+        }
+
+        .res {
+            grid-area: res;
+            color: white;
+            font-size: 60px;
+            padding: 0 20px 0px 0;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .zero {
+            grid-area: zero;
+        }
+
+        button {
+            border-color: transparent;
+            color: #EBEBEB;
+            font-size: 1.8em;
+
+            animation: moveInBottom 5s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        button:hover {
+            background-color: #959799;
+            cursor: pointer;
+            scale: 1.02;
+        }
+
+        button:active {
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+            scale: 1;
+        }
+
+        .op-keys1 {
+            background-color: #3F4143;
+        }
+
+        .op-keys2 {
+            background-color: #FC9E2C;
+        }
+
+        .num-keys {
+            background-color: #5F6062;
+        }
+
+        .plus-min {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .zero {
+            text-align: left;
+            padding-left: 40px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .eq {
+            border-bottom-right-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="win-ctrl">
+            <button class="close"></button>
+            <button class="maximize"></button>
+            <button class="minimize"></button>
+        </div>
+        <div class="res">0</div>
+        <button class="ac op-keys1">AC</button>
+        <button class="plus-min op-keys1">
+            <sup>+</sup>&#8260;<sub>&#8722;</sub>
+        </button>
+        <button class="perc op-keys1">&#37;</button>
+        <button class="div op-keys2">&#247;</button>
+        <button class="seven num-keys">7</button>
+        <button class="eight num-keys">8</button>
+        <button class="nine num-keys">9</button>
+        <button class="mul op-keys2">&#215;</button>
+        <button class="four num-keys">4</button>
+        <button class="five num-keys">5</button>
+        <button class="six num-keys">6</button>
+        <button class="minus op-keys2">&#8722;</button>
+        <button class="one num-keys">1</button>
+        <button class="two num-keys">2</button>
+        <button class="three num-keys">3</button>
+        <button class="plus op-keys2">&#43;</button>
+        <button class="zero num-keys">0</button>
+        <button class="dot num-keys">.</button>
+        <button class="eq op-keys2">&#61;</button>
+
+    </div>
+</body>
+
+</html>
